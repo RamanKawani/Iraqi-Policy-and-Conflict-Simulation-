@@ -1,19 +1,18 @@
-from flask import Flask, render_template, request, jsonify
+# app.py
+from flask import Flask
 from routes.policy_routes import policy_bp
 from routes.conflict_routes import conflict_bp
-from config import Config
 
-# Initialize the Flask application
 app = Flask(__name__)
-app.config.from_object(Config)
 
-# Register the blueprints for the different parts of the app
-app.register_blueprint(policy_bp, url_prefix='/policy')
-app.register_blueprint(conflict_bp, url_prefix='/conflict')
+# Register blueprints
+app.register_blueprint(policy_bp)
+app.register_blueprint(conflict_bp)
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    return "Welcome to the Iraqi Policy and Conflict Simulation!"
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
+
