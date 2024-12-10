@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#simulation-result {
+    margin-top: 20px;
+}
